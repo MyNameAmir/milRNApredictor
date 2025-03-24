@@ -38,6 +38,7 @@ sub training {
 		'training <- training_data[1:nrow(training_data),2:ncol(training_data)]',
 		'type <- training_data[1:nrow(training_data),ncol(training_data)]',
 		'set.seed("'. $seed  .'")',
+  		'training$type <- as.factor(training$type)',
 		$cmd,
 		'save(model, file = "'. $model_file  . '")',	
 		'rm(model)',
